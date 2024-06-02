@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs'); %>
+
+<div class="page_content">
+
+    <ul class="posts_container">
+
+        <% Object.keys(posts).forEach(function (post_id) { %>
+        
+                <li id="<%= post_id %>" class="post_card">
+
+                    <div class="post_header">
+
+                        <div class="post_header_top">
+
+                            <h1 class="post_title">
+                                <%= posts[post_id].title %>
+                            </h1>
+
+                            <form action="/edit_post" method="post">
+                                <!-- potential security problem with relying on hidden post_id input -->
+                                <input type="hidden" name="post_id" value="<%= post_id %>" />
+                                <input class="post_control_button" type="submit" name="submit_edit_post" value="📝" />
+                            </form>
+
+                            <form action="/del_post" method="post">
+                                <!-- potential security problem with relying on hidden post_id input -->
+                                <input type="hidden" name="post_id" value="<%= post_id %>" />
+                                <input class="post_control_button" type="submit" name="submit_del_post" value="❌" />
+                            </form>
+
+                        </div>
+
+                        <div class="post_date">
+                            <%= posts[post_id].date %>
+                        </div>
+
+                    </div>
+
+                        <div class="post_content">
+                            <%= posts[post_id].content %>
+                        </div>
+
+                        <div class="post_footer">
+                        </div>
+
+                </li>
+
+        <% } ); %>
+
+    </ul>
+
+</div>
+
+<%- include('partials/footer.ejs'); %>

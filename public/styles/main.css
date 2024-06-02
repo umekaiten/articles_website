@@ -1,0 +1,198 @@
+/*************************************************/
+/* page: */
+/*************************************************/
+
+body {
+    background-color: lightgray;
+}
+
+.page_container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1rem;
+}
+
+.page_container > .page_header {
+    /* width: 100%; */
+}
+
+/*************************************************/
+/* navbar: */
+/*************************************************/
+
+.navbar_container {
+
+    background-color: black;
+    color: white;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.top_sticky {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    width: calc(100% - 16px); /* Ensure the navbar spans the full width of the viewport */
+    box-sizing: border-box; 
+    transform: translateX(-50%);
+}
+
+.navbar_container > .navbar_item {
+    flex: 1;
+    max-width: max-content;
+    display: flex;
+}
+
+.navbar_container  .navbar_button {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    border: 0;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.navbar_container .navbar_button:hover {
+    background-color: gray;
+}
+
+.toggle_view_button {
+    width: min-content;
+    height: 100%;
+}
+
+/*************************************************/
+/* page content: */
+/*************************************************/
+
+.page_content {
+
+    /* width: 100%; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+/*************************************************/
+/* posts container: */
+/*************************************************/
+
+.posts_container {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 45rem;
+    gap: 1rem;
+    align-items: stretch;
+    margin: auto;
+
+}
+
+.posts_container > .post_card {
+
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-width: 0;
+    box-shadow: 0 0 0.3rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+/*************************************************/
+/* post contents: */
+/*************************************************/
+
+.post_header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post_header > .post_header_top {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.post_title {
+
+    padding: 0;
+    margin: 0;
+    flex: 1;
+
+    word-break: break-word;
+
+}
+
+.post_title:hover {
+
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.post_control_button {
+    background-color: white;
+    border: 0px black solid;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+.post_control_button:hover {
+    border-width: 1px;
+}
+
+.post_control_button:active {
+    background-color: gray;
+}
+
+.post_content {
+    word-break: break-word;
+}
+
+/*************************************************/
+/* new post: */
+/*************************************************/
+
+.edit_post_button {
+    width: 100%;
+}
+
+.new_post_form {
+    margin: auto;
+    width: 100%;
+}
+
+.form_items_container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1rem;
+    
+    max-width: 20rem;
+    margin: auto;
+}
+
+.input_area {
+    border: 1px black solid;
+    border-radius: 0.5rem;
+}

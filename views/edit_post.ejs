@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs'); %>
+
+<div class="page_content">
+
+    <div class="posts_container">
+
+        <div class="new_post_container post_card">
+
+            <!-- todo: add if locals.action -->
+            <form class="new_post_form" action="<%= edit_post.action %>" method="post">
+
+                <div class="form_items_container">
+
+                    <% if (locals.edit_post.post_id) { %>
+                    <input type="hidden" name="post_id" value="<%= edit_post.post_id %>" />
+                    <% } %>
+                    
+                    <input class="input_area" type="text" name="title" placeholder="title" value="<%= edit_post.title_value %>" required/>
+                    
+                    <!-- todo: keep line breaks and special chars -->
+                    <textarea class="input_area" name="content" placeholder="content" rows="6" required><%= edit_post.content_value %></textarea>
+                    
+                    <input type="submit" class="post_control_button edit_post_button" name="<%= edit_post.submit_name %>" value="<%= edit_post.submit_value %>" />
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include('partials/footer.ejs'); %>
